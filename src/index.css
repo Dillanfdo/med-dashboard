@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-stone-100 text-stone-900;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #115e59;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.fc {
+  --fc-border-color: #e7e5e4;
+  --fc-page-bg-color: #ffffff;
+  --fc-neutral-bg-color: #fafaf9;
+  --fc-today-bg-color: #f0fdfa;
+  --fc-button-bg-color: #115e59;
+  --fc-button-border-color: #115e59;
+  --fc-button-hover-bg-color: #134e4a;
+  --fc-button-hover-border-color: #134e4a;
+  --fc-button-active-bg-color: #134e4a;
+  --fc-button-active-border-color: #134e4a;
+  --fc-event-border-color: transparent;
+  font-size: 0.875rem;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.fc .fc-button {
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.fc .fc-event {
+  border-radius: 0.35rem;
+  padding: 1px 2px;
+}
+
+.fc-event.status-cancelled,
+.fc-event.status-no-show {
+  opacity: 0.55;
+}
